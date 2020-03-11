@@ -2,7 +2,6 @@ import os
 from bs4 import BeautifulSoup as bs
 import requests
 from splinter import Browser
-from splinter.exceptions import ElementDoesNotExist
 import pandas as pd
 import datetime as dt
 
