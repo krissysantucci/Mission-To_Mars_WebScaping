@@ -4,10 +4,10 @@ import requests
 from splinter import Browser
 import pandas as pd
 import datetime as dt
+import time
 
-executable_path = {'executable_path': 'chromedriver.exe'}
-browser = Browser('chrome', **executable_path, headless=True)
-
+#executable_path = {'executable_path': 'chromedriver.exe'}
+#browser = Browser('chrome', **executable_path, headless=True)
 
 def mars_news(browser):
     nasa_url = "https://mars.nasa.gov/news/"
@@ -41,7 +41,9 @@ def featured_image(browser):
     html = browser.html
     image_soup = bs(html, "html.parser")
 
-    images = image_soup.click_link_by_partial_href("/spaceimages/image")
+    time.sleep(1)
+    #images = image_soup.click_link_by_partial_href("/spaceimages/image")
+    images = image_soup.select_one("figure.lede a img")
     try:
         images_url = images.get("src")
     except AttributeError:

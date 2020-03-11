@@ -24,12 +24,19 @@
           <div class="media-body">
             <h4> Mars News</h4> 
             <h5 style="color: grey">{{mars_results.news_title}}</h5>
-            <p style="color: black">{{mars_results.news_p}}</p>
+            <p style="color: black">{{mars_app.news_p}}</p>
           </div>
         </div>
       </div>
     </div>
-          
+    <!--image  -->
+    <div class="container">
+      <div class="row" id="mars-featured-image">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+          <h4>Featured Mars Image</h4>
+              <!-- If Images are False/None/Non-Existent, Then Default to Error Message -->
+              <img src="{{mars_results.featured_image}}" class="img-responsive" style="max-width:100%; max-height: auto;" alt="Mars Featured Image"/>
+          </div>       
 </body>
 
 </html>
